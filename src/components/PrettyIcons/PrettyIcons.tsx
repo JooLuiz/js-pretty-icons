@@ -11,7 +11,15 @@ import ChevronDownIcon from "../../assets/ChevronDownIcon";
 import ChevronLeftIcon from "../../assets/ChevronLeftIcon";
 import ChevronRightIcon from "../../assets/ChevronRightIcon";
 import ChevronUpIcon from "../../assets/ChevronUpIcon";
+import CloseIcon from "../../assets/CloseIcon";
+import DoubleChevronDownIcon from "../../assets/DoubleChevronDownIcon";
+import DoubleChevronLeftIcon from "../../assets/DoubleChevronLeftIcon";
+import DoubleChevronRightIcon from "../../assets/DoubleChevronRightIcon";
+import DoubleChevronUpIcon from "../../assets/DoubleChevronUpIcon";
+import ExclamationMarkIcon from "../../assets/ExclamationMarkIcon";
 import FacebookIcon from "../../assets/FacebookIcon";
+import FilterIcon from "../../assets/FilterIcon";
+import FilterVariantOneIcon from "../../assets/FilterVariantOneIcon";
 import HalfHeartFilledIcon from "../../assets/HalfHeartFilledIcon";
 import HalfHeartIcon from "../../assets/HalfHeartIcon";
 import HalfStarFilledIcon from "../../assets/HalfStarFilledIcon";
@@ -28,6 +36,7 @@ import MenuIcon from "../../assets/MenuIcon";
 import MessengerIcon from "../../assets/MessengerIcon";
 import ProfileIcon from "../../assets/ProfileIcon";
 import ProfileVariantOneIcon from "../../assets/ProfileVariantOneIcon";
+import QuestionMarkIcon from "../../assets/QuestionMarkIcon";
 import SearchIcon from "../../assets/SearchIcon";
 import StarFilledIcon from "../../assets/StarFilledIcon";
 import StarIcon from "../../assets/StarIcon";
@@ -133,8 +142,72 @@ const PrettyIcons = ({
         className={className}
       />
     ),
+    close: (
+      <CloseIcon
+        width={width}
+        height={height}
+        color={color}
+        className={className}
+      />
+    ),
+    "double-chevron-down": (
+      <DoubleChevronDownIcon
+        width={width}
+        height={height}
+        color={color}
+        className={className}
+      />
+    ),
+    "double-chevron-left": (
+      <DoubleChevronLeftIcon
+        width={width}
+        height={height}
+        color={color}
+        className={className}
+      />
+    ),
+    "double-chevron-right": (
+      <DoubleChevronRightIcon
+        width={width}
+        height={height}
+        color={color}
+        className={className}
+      />
+    ),
+    "double-chevron-up": (
+      <DoubleChevronUpIcon
+        width={width}
+        height={height}
+        color={color}
+        className={className}
+      />
+    ),
+    "exclamation-mark": (
+      <ExclamationMarkIcon
+        width={width}
+        height={height}
+        color={color}
+        className={className}
+      />
+    ),
     facebook: (
       <FacebookIcon
+        width={width}
+        height={height}
+        color={color}
+        className={className}
+      />
+    ),
+    filter: (
+      <FilterIcon
+        width={width}
+        height={height}
+        color={color}
+        className={className}
+      />
+    ),
+    "filter-variant-1": (
+      <FilterVariantOneIcon
         width={width}
         height={height}
         color={color}
@@ -263,6 +336,14 @@ const PrettyIcons = ({
     ),
     "profile-variant-1": (
       <ProfileVariantOneIcon
+        width={width}
+        height={height}
+        color={color}
+        className={className}
+      />
+    ),
+    "question-mark": (
+      <QuestionMarkIcon
         width={width}
         height={height}
         color={color}
