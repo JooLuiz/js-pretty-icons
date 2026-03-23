@@ -11,7 +11,15 @@ import ChevronDownIcon from "./assets/ChevronDownIcon";
 import ChevronLeftIcon from "./assets/ChevronLeftIcon";
 import ChevronRightIcon from "./assets/ChevronRightIcon";
 import ChevronUpIcon from "./assets/ChevronUpIcon";
+import CloseIcon from "./assets/CloseIcon";
+import DoubleChevronDownIcon from "./assets/DoubleChevronDownIcon";
+import DoubleChevronLeftIcon from "./assets/DoubleChevronLeftIcon";
+import DoubleChevronRightIcon from "./assets/DoubleChevronRightIcon";
+import DoubleChevronUpIcon from "./assets/DoubleChevronUpIcon";
+import ExclamationMarkIcon from "./assets/ExclamationMarkIcon";
 import FacebookIcon from "./assets/FacebookIcon";
+import FilterIcon from "./assets/FilterIcon";
+import FilterVariantOneIcon from "./assets/FilterVariantOneIcon";
 import HalfHeartFilledIcon from "./assets/HalfHeartFilledIcon";
 import HalfHeartIcon from "./assets/HalfHeartIcon";
 import HalfStarFilledIcon from "./assets/HalfStarFilledIcon";
@@ -28,6 +36,7 @@ import MenuIcon from "./assets/MenuIcon";
 import MessengerIcon from "./assets/MessengerIcon";
 import ProfileIcon from "./assets/ProfileIcon";
 import ProfileVariantOneIcon from "./assets/ProfileVariantOneIcon";
+import QuestionMarkIcon from "./assets/QuestionMarkIcon";
 import SearchIcon from "./assets/SearchIcon";
 import StarFilledIcon from "./assets/StarFilledIcon";
 import StarIcon from "./assets/StarIcon";
@@ -47,7 +56,15 @@ export {
   ChevronLeftIcon,
   ChevronRightIcon,
   ChevronUpIcon,
+  CloseIcon,
+  DoubleChevronDownIcon,
+  DoubleChevronLeftIcon,
+  DoubleChevronRightIcon,
+  DoubleChevronUpIcon,
+  ExclamationMarkIcon,
   FacebookIcon,
+  FilterIcon,
+  FilterVariantOneIcon,
   HalfHeartFilledIcon,
   HalfHeartIcon,
   HalfStarFilledIcon,
@@ -64,6 +81,7 @@ export {
   MessengerIcon,
   ProfileIcon,
   ProfileVariantOneIcon,
+  QuestionMarkIcon,
   SearchIcon,
   StarFilledIcon,
   StarIcon,

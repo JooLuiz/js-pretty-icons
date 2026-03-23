@@ -1,12 +1,16 @@
 {
   "name": "js-pretty-icons",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "JS Pretty Icons is a component library with a lot of beautiful and customizable icons, all of them from SVGRepo website.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
-    "rollup": "rollup -c --bundleConfigAsCjs"
+    "rollup": "rollup -c --bundleConfigAsCjs",
+    "watch": "rollup -c --bundleConfigAsCjs --watch",
+    "test": "jest",
+    "lint": "eslint src --ext .ts,.tsx --max-warnings=0",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -23,12 +27,34 @@
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^12.1.2",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/jest": "^30.0.0",
     "@types/react": "^19.0.8",
+    "@typescript-eslint/eslint-plugin": "^8.57.1",
+    "@typescript-eslint/parser": "^8.57.1",
+    "@vitejs/plugin-react": "^6.0.1",
+    "eslint": "^9.39.4",
+    "eslint-plugin-react": "^7.37.5",
+    "husky": "^9.1.7",
+    "jest": "^30.3.0",
+    "jest-environment-jsdom": "^30.3.0",
+    "jsdom": "^29.0.1",
+    "lint-staged": "^16.4.0",
     "react": "^19.0.0",
     "rollup-plugin-dts": "^6.1.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
+    "ts-jest": "^29.4.6",
     "tslib": "^2.8.1",
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.3",
+    "vite": "^8.0.1",
+    "vitest": "^4.1.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": "eslint --max-warnings=0"
   },
   "dependencies": {
     "rollup": "^4.34.6"
