@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased] - yyyy-mm-dd
 
+## [0.1.2] - 2026-03-22
+
+### Added
+
+- Implemented Filter, Filter Variant 1, Double Chevron, Close, Question and exclamation marks, added them to README file, implemented commit and PR validations.
+
 ## [0.1.0] - 2025-02-10
 
 ### Added
