@@ -1,6 +1,6 @@
 import { IconProps } from "../../types/shared";
 
-//Icon Link:
+//Icon Link: https://www.svgrepo.com/svg/486650/double-chevron-right
 const DoubleChevronRightIcon = ({
   width,
   height,

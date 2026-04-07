@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="sparkles-bg" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1D4ED8" />
+      <stop offset="1" stop-color="#7C3AED" />
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="56" height="56" rx="14" fill="url(#sparkles-bg)" />
+  <path
+    d="M32 14L34.8 22.2L43 25L34.8 27.8L32 36L29.2 27.8L21 25L29.2 22.2L32 14Z"
+    fill="#FFFFFF"
+  />
+  <path
+    d="M17 36L18.4 39.6L22 41L18.4 42.4L17 46L15.6 42.4L12 41L15.6 39.6L17 36Z"
+    fill="#FFFFFF"
+    fill-opacity="0.95"
+  />
+  <path
+    d="M47 34L48.2 37.3L51.5 38.5L48.2 39.7L47 43L45.8 39.7L42.5 38.5L45.8 37.3L47 34Z"
+    fill="#FFFFFF"
+    fill-opacity="0.9"
+  />
+</svg>
