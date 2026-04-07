@@ -1,6 +1,6 @@
 import { IconProps } from "../../types/shared";
 
-//Icon Link:
+//Icon Link: https://www.svgrepo.com/svg/522506/close
 const CloseIcon = ({ width, height, color, className }: IconProps) => {
   const iconStroke = color ? color : "#000000";
 

@@ -1,6 +1,6 @@
 import { IconProps } from "../../types/shared";
 
-//Icon Link:
+//Icon Link: https://www.svgrepo.com/svg/532169/filter
 const FilterIcon = ({ width, height, color, className }: IconProps) => {
   const iconStroke = color ? color : "#000000";
 

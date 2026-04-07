@@ -2,6 +2,8 @@
 
 JS Pretty Icons is a component library with a lot of beautiful and customizable icons, all of them from SVGRepo website.
 
+NPM Package: [js-pretty-icons - npm](https://www.npmjs.com/package/js-pretty-icons)
+
 ## Installation
 
 ```bash
@@ -55,6 +57,7 @@ return (
 
 ## Props
 
+
 | Prop        | Tipo   | Descrição                                                                          | Obrigatório |
 | ----------- | ------ | ---------------------------------------------------------------------------------- | ----------- |
 | `icon`      | string | Icon to be showed.                                                                 | Sim         |
@@ -63,73 +66,174 @@ return (
 | `color`     | string | Icon color (default: "#000000").                                                   | Não         |
 | `className` | string | Icon className (always includes {icon-name}-icon classes, i.e. chevron-down-icon). | Não         |
 
+
 ## Available Icons
 
-<table style="background-color: #0d1117">
-<tr></tr>
-<tr>
-<td>
 
-| Name                 | Icon                                                                                         |
-| -------------------- | -------------------------------------------------------------------------------------------- |
-| anchor-link          | <img src="./public/assets/anchor-link-svgrepo-com.svg" width="32" height="32">               |
-| bag                  | <img src="./public/assets/bag-shopping-svgrepo-com.svg" width="32" height="32">              |
-| bag-variant-1        | <img src="./public/assets/bag-svgrepo-com.svg" width="32" height="32">                       |
-| bag-variant-2        | <img src="./public/assets/cart-2-svgrepo-com.svg" width="32" height="32">                    |
-| cart                 | <img src="./public/assets/cart-shopping-svgrepo-com.svg" width="32" height="32">             |
-| cart-variant-1       | <img src="./public/assets/cart-large-minimalistic-svgrepo-com.svg" width="32" height="32">   |
-| cart-variant-2       | <img src="./public/assets/cart-large-2-svgrepo-com.svg" width="32" height="32">              |
-| chevron-down         | <img src="./public/assets/chevron-down-svgrepo-com.svg" width="32" height="32">              |
-| chevron-left         | <img src="./public/assets/chevron-left-svgrepo-com.svg" width="32" height="32">              |
-| chevron-right        | <img src="./public/assets/chevron-right-svgrepo-com.svg" width="32" height="32">             |
-| chevron-up           | <img src="./public/assets/chevron-up-svgrepo-com.svg" width="32" height="32">                |
-| close                | <img src="./public/assets/close-svgrepo-com.svg" width="32" height="32">                     |
-| double-chevron-down  | <img src="./public/assets/double-chevron-down-svgrepo-com.svg" width="32" height="32">       |
-| double-chevron-left  | <img src="./public/assets/double-chevron-left-svgrepo-com.svg" width="32" height="32">       |
+|     |
+| --- |
+|     |
+|     |
 
-</td>
-<td>
 
-| Name                 | Icon                                                                                 |
-| -------------------- | ------------------------------------------------------------------------------------ |
-| double-chevron-right | <img src="./public/assets/double-chevron-right-svgrepo-com.svg" width="32" height="32"> |
-| double-chevron-up    | <img src="./public/assets/double-chevron-up-svgrepo-com.svg" width="32" height="32">    |
-| exclamation-mark     | <img src="./public/assets/exclamation-mark-svgrepo-com.svg" width="32" height="32">    |
-| facebook             | <img src="./public/assets/facebook-svgrepo-com.svg" width="32" height="32">            |
-| filter               | <img src="./public/assets/filter-svgrepo-com.svg" width="32" height="32">               |
-| filter-variant-1     | <img src="./public/assets/filter-variant-1-svgrepo-com.svg" width="32" height="32">     |
-| half-heart-filled    | <img src="./public/assets/heart-half-filled-svgrepo-com.svg" width="32" height="32">      |
-| half-heart           | <img src="./public/assets/heart-half-svgrepo-com.svg" width="32" height="32">             |
-| half-star-filled     | <img src="./public/assets/star-half-svgrepo-com.svg" width="32" height="32">              |
-| half-star            | <img src="./public/assets/star-sharp-half-svgrepo-com.svg" width="32" height="32">        |
-| heart-filled         | <img src="./public/assets/heart-filled-svgrepo-com.svg" width="32" height="32">           |
-| heart                | <img src="./public/assets/heart-svgrepo-com.svg" width="32" height="32">                  |
-| home                 | <img src="./public/assets/home-svgrepo-com.svg" width="32" height="32">                 |
-| home-variant-1       | <img src="./public/assets/home-1-svgrepo-com.svg" width="32" height="32">               |
 
-</td>
-<td>
+| Name                     | Icon |
+| ------------------------ | ---- |
+| alarm                    |      |
+| alarm-variant-1          |      |
+| anchor-link              |      |
+| arrow-down               |      |
+| arrow-left               |      |
+| arrow-right              |      |
+| arrow-up                 |      |
+| bag                      |      |
+| bag-variant-1            |      |
+| bag-variant-2            |      |
+| bell                     |      |
+| bell-slash               |      |
+| bell-slash-variant-1     |      |
+| bell-variant-1           |      |
+| bell-variant-2           |      |
+| bookmark                 |      |
+| calendar                 |      |
+| calendar-variant-1       |      |
+| camera                   |      |
+| camera-slash             |      |
+| camera-variant-1         |      |
+| camera-variant-2         |      |
+| camera-variant-3         |      |
+| camera-variant-4         |      |
+| cart                     |      |
+| cart-variant-1           |      |
+| cart-variant-2           |      |
+| chat                     |      |
+| chat-check               |      |
+| chat-close               |      |
+| chat-dots-horizontal     |      |
+| chat-exclamation         |      |
+| chat-info                |      |
+| chat-question            |      |
+| check                    |      |
+| check-circle             |      |
+| chevron-down             |      |
+| chevron-left             |      |
+| chevron-right            |      |
+| chevron-up               |      |
+| clock                    |      |
+| clock-variant-1          |      |
+| clock-variant-2          |      |
+| close                    |      |
+| cloud-download           |      |
+| cloud-download-variant-1 |      |
 
-| Name                 | Icon                                                                                  |
-| -------------------- | ------------------------------------------------------------------------------------- |
-| instagram            | <img src="./public/assets/instagram-svgrepo-com.svg" width="32" height="32">            |
-| instagram-old        | <img src="./public/assets/instagram-old-svgrepo-com.svg" width="32" height="32">      |
-| location             | <img src="./public/assets/location-svgrepo-com.svg" width="32" height="32">           |
-| location-variant-1   | <img src="./public/assets/location-pin-alt-svgrepo-com.svg" width="32" height="32">   |
-| menu                 | <img src="./public/assets/menu-svgrepo-com.svg" width="32" height="32">               |
-| messenger            | <img src="./public/assets/facebook-messenger-svgrepo-com.svg" width="32" height="32"> |
-| profile              | <img src="./public/assets/profile-round-1342-svgrepo-com.svg" width="32" height="32"> |
-| profile-variant-1    | <img src="./public/assets/profile-svgrepo-com.svg" width="32" height="32">            |
-| question-mark        | <img src="./public/assets/question-mark-svgrepo-com.svg" width="32" height="32">      |
-| search               | <img src="./public/assets/search-svgrepo-com.svg" width="32" height="32">             |
-| star-filled          | <img src="./public/assets/star-svgrepo-com.svg" width="32" height="32">               |
-| star                 | <img src="./public/assets/star-sharp-svgrepo-com.svg" width="32" height="32">         |
-| twitter              | <img src="./public/assets/twitter-svgrepo-com.svg" width="32" height="32">            |
-| whatsapp             | <img src="./public/assets/whatsapp-svgrepo-com.svg" width="32" height="32">           |
 
-</td>
-</tr>
-</table>
+
+
+
+| Name                 | Icon |
+| -------------------- | ---- |
+| copy                 |      |
+| copy-variant-1       |      |
+| document             |      |
+| document-variant-1   |      |
+| document-variant-2   |      |
+| dots-horizontal      |      |
+| dots-vertical        |      |
+| double-chevron-down  |      |
+| double-chevron-left  |      |
+| double-chevron-right |      |
+| double-chevron-up    |      |
+| download             |      |
+| download-variant-1   |      |
+| download-variant-2   |      |
+| edit-image           |      |
+| exclamation-mark     |      |
+| eye                  |      |
+| eye-closed           |      |
+| eye-slash            |      |
+| eye-slash-variant-1  |      |
+| eye-variant-1        |      |
+| facebook             |      |
+| filter               |      |
+| filter-variant-1     |      |
+| folder               |      |
+| folder-variant-1     |      |
+| folder-variant-2     |      |
+| half-heart           |      |
+| half-heart-filled    |      |
+| half-star            |      |
+| half-star-filled     |      |
+| heart                |      |
+| heart-filled         |      |
+| home                 |      |
+| home-variant-1       |      |
+| image                |      |
+| image-check          |      |
+| image-close          |      |
+| image-minus          |      |
+| image-plus           |      |
+| image-variant-1      |      |
+| info                 |      |
+| instagram            |      |
+| instagram-old        |      |
+| location             |      |
+| location-variant-1   |      |
+
+
+
+
+
+| Name                   | Icon |
+| ---------------------- | ---- |
+| mail                   |      |
+| mail-open              |      |
+| mail-variant-1         |      |
+| menu                   |      |
+| messenger              |      |
+| minus                  |      |
+| minus-circle           |      |
+| mobile-phone           |      |
+| mobile-phone-variant-1 |      |
+| pause                  |      |
+| pencil                 |      |
+| pencil-variant-1       |      |
+| pencil-variant-2       |      |
+| phone                  |      |
+| phone-variant-1        |      |
+| play                   |      |
+| play-pause             |      |
+| plus-circle            |      |
+| plus                   |      |
+| plus-minus             |      |
+| profile                |      |
+| profile-variant-1      |      |
+| question-mark          |      |
+| refresh                |      |
+| refresh-variant-1      |      |
+| save                   |      |
+| save-variant-1         |      |
+| save-variant-2         |      |
+| search                 |      |
+| send                   |      |
+| send-variant-1         |      |
+| send-variant-2         |      |
+| send-variant-3         |      |
+| send-variant-4         |      |
+| settings               |      |
+| settings-variant-1     |      |
+| star                   |      |
+| star-filled            |      |
+| trash                  |      |
+| trash-variant-1        |      |
+| twitter                |      |
+| upload                 |      |
+| upload-variant-1       |      |
+| upload-variant-2       |      |
+| whatsapp               |      |
+|                        |      |
+
+
+
 
 All icons are sourced from [SVG Repo](https://www.svgrepo.com/) and you can find the icon page on the icon file inside `assets` folder.
 

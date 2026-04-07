@@ -1,14 +1,26 @@
 {
   "name": "js-pretty-icons",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "JS Pretty Icons is a component library with a lot of beautiful and customizable icons, all of them from SVGRepo website.",
+  "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "sideEffects": false,
   "scripts": {
+    "build": "rollup -c --bundleConfigAsCjs",
     "rollup": "rollup -c --bundleConfigAsCjs",
+    "build:watch": "rollup -c --bundleConfigAsCjs --watch",
     "watch": "rollup -c --bundleConfigAsCjs --watch",
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "lint": "eslint src --ext .ts,.tsx --max-warnings=0",
     "prepare": "husky"
   },
@@ -16,6 +28,10 @@
     "type": "git",
     "url": "git@github.com:JooLuiz/js-pretty-icons.git"
   },
+  "bugs": {
+    "url": "https://github.com/JooLuiz/js-pretty-icons/issues"
+  },
+  "homepage": "https://jooluiz.github.io/js-pretty-icons/",
   "author": "João Luiz de Castro (https://github.com/JooLuiz)",
   "keywords": [
     "Icons",
@@ -50,8 +66,13 @@
     "vite": "^8.0.1",
     "vitest": "^4.1.0"
   },
+  "peerDependencies": {
+    "react": ">=17"
+  },
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
   "lint-staged": {
     "src/**/*.{ts,tsx}": "eslint --max-warnings=0"
