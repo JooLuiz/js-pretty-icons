@@ -1,3 +1,3 @@
-import { PlusLargeIcon } from "./PlusLargeIcon";
+import { PlusIcon } from "./PlusLargeIcon";
 
-export default PlusLargeIcon;
+export default PlusIcon;

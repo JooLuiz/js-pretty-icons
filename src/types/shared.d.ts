@@ -116,7 +116,7 @@ export type Icons =
   | "play"
   | "play-pause"
   | "plus-circle"
-  | "plus-large"
+  | "plus"
   | "plus-minus"
   | "profile"
   | "profile-variant-1"

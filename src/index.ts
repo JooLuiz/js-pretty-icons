@@ -110,7 +110,7 @@ import PhoneVariantOneIcon from "./assets/PhoneVariantOneIcon";
 import PlayIcon from "./assets/PlayIcon";
 import PlayPauseIcon from "./assets/PlayPauseIcon";
 import PlusCircleIcon from "./assets/PlusCircleIcon";
-import PlusLargeIcon from "./assets/PlusLargeIcon";
+import PlusIcon from "./assets/PlusLargeIcon";
 import PlusMinusIcon from "./assets/PlusMinusIcon";
 import ProfileIcon from "./assets/ProfileIcon";
 import ProfileVariantOneIcon from "./assets/ProfileVariantOneIcon";
@@ -250,7 +250,7 @@ export {
   PlayIcon,
   PlayPauseIcon,
   PlusCircleIcon,
-  PlusLargeIcon,
+  PlusIcon,
   PlusMinusIcon,
   ProfileIcon,
   ProfileVariantOneIcon,
