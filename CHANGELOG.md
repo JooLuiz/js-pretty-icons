@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased] - yyyy-mm-dd
 
+### Added
+
+- Added 80 new icons: browsers and web (`github`, `chrome`, `firefox`, `internet-globe`, `internet-globe-variant-1`, `microsoft-edge`, `internet-explorer`, `brave`, `opera`, `safari`, `feed`, `external-link`, `wifi`, `wifi-low`, `wifi-medium`, `wifi-very-low`, `wifi-exclamation`, `wifi-slash`), git and dev tools (`git`, `git-variant-1`, `git-merge`, `git-merge-variant-1`, `git-commit`, `git-commit-variant-1`, `git-branch`, `git-branch-variant-1`, `git-pull-request`, `git-pull-request-variant-1`, `code`, `code-variant-1`, `terminal`, `terminal-variant-1`, `terminal-variant-2`, `bug`, `bug-slash`, `docker`, `npm`, `npm-variant-1`, `vercel`, `vercel-variant-1`, `stackoverflow`, `bitbucket`, `bitbucket-variant-1`, `gitlab`, `gitlab-variant-1`), social and platforms (`youtube`, `youtube-variant-1`, `tiktok`, `linkedin`, `linkedin-variant-1`, `telegram`, `telegram-variant-1`, `discord`, `discord-variant-1`, `twitch`, `reddit`, `pinterest`, `pinterest-variant-1`, `snapchat`, `snapchat-variant-1`, `slack`, `skype`, `signal`, `microsoft-teams`, `google-meet`, `meta`, `google`, `google-variant-1`, `google-drive`, `apple`, `microsoft`, `windows`), and theme/status (`moon`, `moon-variant-1`, `moon-in-the-sea`, `sun`, `sun-variant-1`, `sun-in-the-sea`, `warning-circle`, `warning-triangle`).
+
 ## [0.2.1] - 2026-04-07
 
 ### Fixed
