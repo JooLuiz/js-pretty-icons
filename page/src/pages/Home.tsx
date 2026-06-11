@@ -41,7 +41,10 @@ const HomePage = () => {
         <ul className="value-props-list">
           <li>TypeScript-first with typed icon keys</li>
           <li>Tree-shakeable package (`sideEffects: false`)</li>
-          <li>Customizable `width`, `height`, `color`, and `className`</li>
+          <li>
+            Customizable `width`, `height`, `color`, `className`, and accessibility props
+            (`ariaLabel`, `title`)
+          </li>
         </ul>
       </section>
 

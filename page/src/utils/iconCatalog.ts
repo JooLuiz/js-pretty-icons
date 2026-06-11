@@ -6,6 +6,8 @@ export type IconComponentProps = {
   height?: number;
   color?: string;
   className?: string;
+  ariaLabel?: string;
+  title?: string;
 };
 
 export type IconPreviewItem = {

@@ -1,46 +1,12 @@
 import ExternalLinks from "../components/ExternalLinks";
 import InstallCommand from "../components/InstallCommand";
 import PageMeta from "../components/PageMeta";
+import {
+  iconAccessibilityNote,
+  iconPropsReference,
+} from "../constants/iconPropsReference";
 import { siteLinks } from "../constants/siteLinks";
 import { siteMeta } from "../constants/siteMeta";
-
-const propsReference = [
-  {
-    prop: "icon",
-    type: "string",
-    defaultValue: "—",
-    required: "Yes (PrettyIcons only)",
-    description: "Kebab-case icon key",
-  },
-  {
-    prop: "width",
-    type: "number",
-    defaultValue: "32",
-    required: "No",
-    description: "Icon width in pixels",
-  },
-  {
-    prop: "height",
-    type: "number",
-    defaultValue: "32",
-    required: "No",
-    description: "Icon height in pixels",
-  },
-  {
-    prop: "color",
-    type: "string",
-    defaultValue: "#000000",
-    required: "No",
-    description: "Icon stroke or fill color",
-  },
-  {
-    prop: "className",
-    type: "string",
-    defaultValue: "—",
-    required: "No",
-    description: "Extra CSS class; always includes `{icon-name}-icon`",
-  },
-];
 
 const GettingStartedPage = () => {
   return (
@@ -69,7 +35,9 @@ const GettingStartedPage = () => {
           <pre className="code-block">
             <code>{`import PrettyIcons from "${siteMeta.packageName}";
 
-return <PrettyIcons icon="chevron-down" color="#2563eb" />;`}</code>
+return (
+  <PrettyIcons icon="chevron-down" color="#2563eb" ariaLabel="Expand section" />
+);`}</code>
           </pre>
         </article>
         <article className="example-card">
@@ -97,7 +65,7 @@ return <ChevronDownIcon width={32} height={32} color="#2563eb" />;`}</code>
               </tr>
             </thead>
             <tbody>
-              {propsReference.map((propRow) => (
+              {iconPropsReference.map((propRow) => (
                 <tr key={propRow.prop}>
                   <td>
                     <code>{propRow.prop}</code>
@@ -111,6 +79,7 @@ return <ChevronDownIcon width={32} height={32} color="#2563eb" />;`}</code>
             </tbody>
           </table>
         </div>
+        <p>{iconAccessibilityNote}</p>
       </section>
 
       <section className="docs-section">
