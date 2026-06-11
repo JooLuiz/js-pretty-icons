@@ -1,99 +1,81 @@
 import { useMemo, useState } from "react";
-import * as prettyIconsExports from "js-pretty-icons";
-import type { ComponentType } from "react";
+import { useSearchParams } from "react-router-dom";
 
-type IconComponentProps = {
-  width?: number;
-  height?: number;
-  color?: string;
-  className?: string;
-};
-
-type IconPreviewItem = {
-  exportName: string;
-  displayName: string;
-  usageName: string;
-  IconComponent: ComponentType<IconComponentProps>;
-};
-
-const prettyIconsRecord = prettyIconsExports as Record<string, unknown>;
-const variantWordToNumberMap = {
-  one: "1",
-  two: "2",
-  three: "3",
-  four: "4",
-} as const;
-
-const convertExportNameToUsageName = (exportName: string) => {
-  const exportNameWithoutSuffix = exportName.replace(/Icon$/, "");
-  const kebabCaseName = exportNameWithoutSuffix
-    .replace(/([a-z0-9])([A-Z])/g, "$1-$2")
-    .toLowerCase();
-
-  return kebabCaseName.replace(
-    /variant-(one|two|three|four)/g,
-    (_, variantWord: keyof typeof variantWordToNumberMap) =>
-      `variant-${variantWordToNumberMap[variantWord]}`
-  );
-};
-
-const formatHumanReadableName = (exportName: string) => {
-  const exportNameWithoutSuffix = exportName.replace(/Icon$/, "");
-
-  return exportNameWithoutSuffix
-    .replace(/([a-z0-9])([A-Z])/g, "$1 $2")
-    .replace(/\b[a-z]/g, (letter) => letter.toUpperCase());
-};
-
-const iconPreviewItems: IconPreviewItem[] = Object.keys(prettyIconsRecord)
-  .filter((exportName) => exportName !== "default")
-  .map((exportName) => {
-    const exportedMember = prettyIconsRecord[exportName];
-
-    if (typeof exportedMember !== "function") {
-      return null;
-    }
-
-    return {
-      exportName,
-      displayName: formatHumanReadableName(exportName),
-      usageName: convertExportNameToUsageName(exportName),
-      IconComponent: exportedMember as ComponentType<IconComponentProps>,
-    };
-  })
-  .filter((iconPreviewItem): iconPreviewItem is IconPreviewItem => iconPreviewItem !== null)
-  .sort((firstIcon, secondIcon) => firstIcon.exportName.localeCompare(secondIcon.exportName));
+import IconCard from "../components/IconCard";
+import PageMeta from "../components/PageMeta";
+import {
+  allCategoryFilterOptions,
+  getCategoryForUsageName,
+} from "../data/iconCategories";
+import { ICON_COUNT, iconPreviewItems } from "../utils/iconCatalog";
 
 type IconsPageProps = {
   theme: "dark" | "light";
 };
 
 const IconsPage = ({ theme }: IconsPageProps) => {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
   const [iconSize, setIconSize] = useState(28);
-  const iconColor = theme === "dark" ? "#ffffff" : "#000000";
+  const [customColor, setCustomColor] = useState<string | null>(null);
+  const [useThemeColor, setUseThemeColor] = useState(true);
+
+  const searchTerm = searchParams.get("search") ?? "";
+  const selectedCategory = searchParams.get("category") ?? "all";
+  const themeColor = theme === "dark" ? "#ffffff" : "#000000";
+  const iconColor = useThemeColor ? themeColor : (customColor ?? themeColor);
 
   const filteredIconPreviewItems = useMemo(() => {
     const normalizedSearchTerm = searchTerm.trim().toLowerCase();
 
-    if (!normalizedSearchTerm) {
-      return iconPreviewItems;
+    return iconPreviewItems.filter((iconPreviewItem) => {
+      const matchesSearch =
+        !normalizedSearchTerm ||
+        iconPreviewItem.displayName.toLowerCase().includes(normalizedSearchTerm) ||
+        iconPreviewItem.exportName.toLowerCase().includes(normalizedSearchTerm) ||
+        iconPreviewItem.usageName.toLowerCase().includes(normalizedSearchTerm);
+
+      const iconCategory = getCategoryForUsageName(iconPreviewItem.usageName);
+      const matchesCategory =
+        selectedCategory === "all" || iconCategory === selectedCategory;
+
+      return matchesSearch && matchesCategory;
+    });
+  }, [searchTerm, selectedCategory]);
+
+  const updateSearchParam = (key: string, value: string) => {
+    const nextSearchParams = new URLSearchParams(searchParams);
+
+    if (value) {
+      nextSearchParams.set(key, value);
+    } else {
+      nextSearchParams.delete(key);
     }
 
-    return iconPreviewItems.filter((iconPreviewItem) =>
-      iconPreviewItem.displayName.toLowerCase().includes(normalizedSearchTerm) ||
-      iconPreviewItem.exportName.toLowerCase().includes(normalizedSearchTerm) ||
-      iconPreviewItem.usageName.toLowerCase().includes(normalizedSearchTerm)
-    );
-  }, [searchTerm]);
+    setSearchParams(nextSearchParams);
+  };
+
+  const handleColorChange = (nextColor: string) => {
+    setCustomColor(nextColor);
+    setUseThemeColor(false);
+  };
+
+  const handleResetThemeColor = () => {
+    setUseThemeColor(true);
+    setCustomColor(null);
+  };
 
   return (
     <div className="page-content">
+      <PageMeta
+        title="Icon Catalog"
+        description="Browse and search all js-pretty-icons React components."
+      />
+
       <section className="section-header">
         <h1>Icon Catalog</h1>
         <p>
-          Browse all exported icons from `js-pretty-icons`. Search by component name and tweak the
-          size/color preview controls.
+          Browse all exported icons from `js-pretty-icons`. Search by component name, filter by
+          category, and tweak preview controls.
         </p>
       </section>
 
@@ -103,7 +85,7 @@ const IconsPage = ({ theme }: IconsPageProps) => {
           <input
             type="text"
             value={searchTerm}
-            onChange={(event) => setSearchTerm(event.target.value)}
+            onChange={(event) => updateSearchParam("search", event.target.value)}
             placeholder="Example: BellIcon or bell"
           />
         </label>
@@ -117,22 +99,75 @@ const IconsPage = ({ theme }: IconsPageProps) => {
             onChange={(event) => setIconSize(Number(event.target.value))}
           />
         </label>
+        <label>
+          Color
+          <div className="color-control-row">
+            <input
+              type="color"
+              value={iconColor}
+              onChange={(event) => handleColorChange(event.target.value)}
+            />
+            <button
+              type="button"
+              className="text-button"
+              onClick={handleResetThemeColor}
+              disabled={useThemeColor}
+            >
+              Use theme color
+            </button>
+          </div>
+        </label>
       </section>
 
-      <section className="icon-grid" aria-label="Icons list">
-        {filteredIconPreviewItems.map(
-          ({ exportName, displayName, usageName, IconComponent }) => (
-          <article key={exportName} className="icon-card">
-            <div className="icon-preview">
-              <IconComponent width={iconSize} height={iconSize} color={iconColor} />
-            </div>
-            <h2 className="icon-display-name">{displayName}</h2>
-            <p className="icon-usage-name">icon=&quot;{usageName}&quot;</p>
-            <p className="icon-jsx-name">&lt;{exportName} /&gt;</p>
-          </article>
-          )
-        )}
+      <section className="category-filter-panel" aria-label="Category filters">
+        {allCategoryFilterOptions.map((categoryOption) => (
+          <button
+            key={categoryOption.id}
+            type="button"
+            className={
+              selectedCategory === categoryOption.id
+                ? "category-pill category-pill-active"
+                : "category-pill"
+            }
+            onClick={() => updateSearchParam("category", categoryOption.id === "all" ? "" : categoryOption.id)}
+          >
+            {categoryOption.label}
+          </button>
+        ))}
       </section>
+
+      <p className="results-summary">
+        Showing {filteredIconPreviewItems.length} of {ICON_COUNT} icons
+      </p>
+
+      {filteredIconPreviewItems.length === 0 ? (
+        <section className="empty-state">
+          <h2>No icons found</h2>
+          <p>
+            {searchTerm
+              ? `No icons found for "${searchTerm}".`
+              : "No icons match the selected category."}
+          </p>
+          <button
+            type="button"
+            className="text-button"
+            onClick={() => setSearchParams({})}
+          >
+            Clear filters
+          </button>
+        </section>
+      ) : (
+        <section className="icon-grid" aria-label="Icons list">
+          {filteredIconPreviewItems.map((iconPreviewItem) => (
+            <IconCard
+              key={iconPreviewItem.exportName}
+              iconPreviewItem={iconPreviewItem}
+              iconSize={iconSize}
+              iconColor={iconColor}
+            />
+          ))}
+        </section>
+      )}
     </div>
   );
 };

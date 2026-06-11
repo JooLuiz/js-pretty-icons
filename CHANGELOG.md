@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased] - YYYY-MM-DD
 
+## [0.3.2] - 2026-06-10
+
+### Fixed
+
+- Publishing changes after build and adding a prePublishOnly script
+
+## [0.3.1] - 2026-06-10
+
+### Fixed
+
+- Fixed background block rendering for `git-branch`, `git-pull-request`, `git-commit`, `moon`, `terminal`, and `terminal-variant-1` by removing erroneous full-size fills.
+
 ## [0.3.0] - 2026-06-10
 
 ### Added

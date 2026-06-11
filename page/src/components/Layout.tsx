@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { Link, NavLink } from "react-router-dom";
 
+import ExternalLinks from "./ExternalLinks";
 import Footer from "./Footer";
 
 type LayoutProps = {
@@ -11,6 +12,7 @@ type LayoutProps = {
 
 const navItems = [
   { to: "/", label: "Home", end: true },
+  { to: "/getting-started", label: "Getting Started", end: true },
   { to: "/icons", label: "Icons", end: true },
 ];
 
@@ -22,6 +24,7 @@ const Layout = ({ children, theme, onToggleTheme }: LayoutProps) => {
           js-pretty-icons
         </Link>
         <p className="site-description">React icon library based on SVGRepo assets.</p>
+        <ExternalLinks variant="compact" />
         <nav className="site-nav">
           {navItems.map((navItem) => (
             <NavLink

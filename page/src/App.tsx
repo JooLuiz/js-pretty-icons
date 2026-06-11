@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 
 import Layout from "./components/Layout";
+import GettingStartedPage from "./pages/GettingStarted";
 import HomePage from "./pages/Home";
 import IconsPage from "./pages/Icons";
 
@@ -21,6 +22,7 @@ const App = () => {
     >
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/getting-started" element={<GettingStartedPage />} />
         <Route path="/icons" element={<IconsPage theme={theme} />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
