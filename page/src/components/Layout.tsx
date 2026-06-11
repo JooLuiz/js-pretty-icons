@@ -1,3 +1,4 @@
+import { MoonIcon, SunIcon } from "js-pretty-icons";
 import type { ReactNode } from "react";
 import { Link, NavLink } from "react-router-dom";
 
@@ -17,6 +18,8 @@ const navItems = [
 ];
 
 const Layout = ({ children, theme, onToggleTheme }: LayoutProps) => {
+  const themeIconColor = theme === "dark" ? "#e7eefc" : "#17202e";
+
   return (
     <div className="site-shell">
       <aside className="site-sidebar">
@@ -45,7 +48,7 @@ const Layout = ({ children, theme, onToggleTheme }: LayoutProps) => {
               className={`theme-icon ${theme === "dark" ? "theme-icon-active" : ""}`}
               aria-hidden="true"
             >
-              🌙
+              <MoonIcon width={16} height={16} color={themeIconColor} />
             </span>
             <button
               type="button"
@@ -59,7 +62,7 @@ const Layout = ({ children, theme, onToggleTheme }: LayoutProps) => {
               className={`theme-icon ${theme === "light" ? "theme-icon-active" : ""}`}
               aria-hidden="true"
             >
-              🌞
+              <SunIcon width={16} height={16} color={themeIconColor} />
             </span>
           </div>
           <Footer />

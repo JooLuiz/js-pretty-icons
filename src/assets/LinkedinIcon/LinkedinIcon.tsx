@@ -1,17 +1,19 @@
+import { BaseIconSvg } from "../../components/BaseIconSvg";
 import { IconProps } from "../../types/shared";
 
 //Icon Link: https://www.svgrepo.com/svg/512419/linkedin-161
-const LinkedinIcon = ({ width, height, color, className }: IconProps) => {
+const LinkedinIcon = ({ width, height, color, className, ariaLabel, title }: IconProps) => {
   const iconColor = color ? color : "#000000";
 
   return (
-    <svg
-      width={width ? width : 32}
-      height={height ? height : 32}
+    <BaseIconSvg
+      baseClassName="linkedin-icon"
       viewBox="0 0 20 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={`linkedin-icon ${className}`}
+      width={width}
+      height={height}
+      className={className}
+      ariaLabel={ariaLabel}
+      title={title}
     >
       <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g transform="translate(-180.000000, -7479.000000)" fill={iconColor}>
@@ -21,7 +23,7 @@ const LinkedinIcon = ({ width, height, color, className }: IconProps) => {
       </g>
       </g>
       </g>
-    </svg>
+    </BaseIconSvg>
   );
 };
 

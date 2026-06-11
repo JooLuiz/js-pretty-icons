@@ -19,7 +19,9 @@ const iconNamesFromTypes = Array.from(
 const iconEntries: IconEntry[] = Object.entries(iconLibrary)
   .filter(
     ([exportName, exportedValue]) =>
-      exportName !== "default" && typeof exportedValue === "function"
+      exportName !== "default" &&
+      exportName !== "PrettyIcons" &&
+      typeof exportedValue === "function"
   )
   .map(([exportName, exportedValue]) => [
     exportName,
@@ -43,6 +45,8 @@ describe("Icon components", () => {
       expect(svgElement).toBeInTheDocument();
       expect(svgElement).toHaveAttribute("width", "32");
       expect(svgElement).toHaveAttribute("height", "32");
+      expect(svgElement).toHaveAttribute("aria-hidden", "true");
+      expect(svgElement).not.toHaveClass("undefined");
       expect(defaultColorElement).toBeInTheDocument();
     }
   );
@@ -71,7 +75,36 @@ describe("Icon components", () => {
       expect(svgElement).toHaveAttribute("width", "28");
       expect(svgElement).toHaveAttribute("height", "20");
       expect(svgElement).toHaveClass(customClassName);
+      expect(svgElement).not.toHaveClass("undefined");
       expect(customColorElement).toBeInTheDocument();
     }
   );
+
+  it("supports accessible names through ariaLabel", () => {
+    const ChevronDownIcon = iconEntries.find(
+      ([exportName]) => exportName === "ChevronDownIcon"
+    )?.[1];
+
+    expect(ChevronDownIcon).toBeDefined();
+
+    const { container } = render(
+      <ChevronDownIcon ariaLabel="Expand section" />
+    );
+
+    const svgElement = container.querySelector("svg");
+    expect(svgElement).toHaveAttribute("role", "img");
+    expect(svgElement).toHaveAttribute("aria-label", "Expand section");
+  });
+
+  it("supports accessible names through title", () => {
+    const ChevronDownIcon = iconEntries.find(
+      ([exportName]) => exportName === "ChevronDownIcon"
+    )?.[1];
+
+    expect(ChevronDownIcon).toBeDefined();
+
+    const { container } = render(<ChevronDownIcon title="Expand section" />);
+
+    expect(container.querySelector("title")).toHaveTextContent("Expand section");
+  });
 });

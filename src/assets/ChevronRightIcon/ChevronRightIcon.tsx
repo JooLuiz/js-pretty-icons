@@ -1,15 +1,17 @@
+import { BaseIconSvg } from "../../components/BaseIconSvg";
 import { IconProps } from "../../types/shared";
 
 //Icon Link: https://www.svgrepo.com/svg/533661/chevron-right
-const ChevronRightIcon = ({ width, height, color, className }: IconProps) => {
+const ChevronRightIcon = ({ width, height, color, className, ariaLabel, title }: IconProps) => {
   return (
-    <svg
-      width={width ? width : 32}
-      height={height ? height : 32}
+    <BaseIconSvg
+      baseClassName="chevron-right-icon"
       viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={`chevron-right-icon ${className}`}
+      width={width}
+      height={height}
+      className={className}
+      ariaLabel={ariaLabel}
+      title={title}
     >
       <path
         d="M9 6L15 12L9 18"
@@ -18,7 +20,7 @@ const ChevronRightIcon = ({ width, height, color, className }: IconProps) => {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-    </svg>
+    </BaseIconSvg>
   );
 };
 

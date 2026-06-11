@@ -1,17 +1,19 @@
+import { BaseIconSvg } from "../../components/BaseIconSvg";
 import { IconProps } from "../../types/shared";
 
 //Icon Link: https://www.svgrepo.com/svg/513005/twitch-182
-const TwitchIcon = ({ width, height, color, className }: IconProps) => {
+const TwitchIcon = ({ width, height, color, className, ariaLabel, title }: IconProps) => {
   const iconColor = color ? color : "#000000";
 
   return (
-    <svg
-      width={width ? width : 32}
-      height={height ? height : 32}
+    <BaseIconSvg
+      baseClassName="twitch-icon"
       viewBox="-0.5 0 20 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={`twitch-icon ${className}`}
+      width={width}
+      height={height}
+      className={className}
+      ariaLabel={ariaLabel}
+      title={title}
     >
       <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g transform="translate(-141.000000, -7399.000000)" fill={iconColor}>
@@ -21,7 +23,7 @@ const TwitchIcon = ({ width, height, color, className }: IconProps) => {
       </g>
       </g>
       </g>
-    </svg>
+    </BaseIconSvg>
   );
 };
 

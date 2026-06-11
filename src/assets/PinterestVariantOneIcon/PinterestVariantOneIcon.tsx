@@ -1,17 +1,19 @@
+import { BaseIconSvg } from "../../components/BaseIconSvg";
 import { IconProps } from "../../types/shared";
 
 //Icon Link: https://www.svgrepo.com/svg/508884/pinterest
-const PinterestVariantOneIcon = ({ width, height, color, className }: IconProps) => {
+const PinterestVariantOneIcon = ({ width, height, color, className, ariaLabel, title }: IconProps) => {
   const iconColor = color ? color : "#000000";
 
   return (
-    <svg
-      width={width ? width : 32}
-      height={height ? height : 32}
+    <BaseIconSvg
+      baseClassName="pinterest-variant-1-icon"
       viewBox="0 0 512 512"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={`pinterest-variant-1-icon ${className}`}
+      width={width}
+      height={height}
+      className={className}
+      ariaLabel={ariaLabel}
+      title={title}
     >
       <g>
       <path d="M220.646,338.475C207.223,408.825,190.842,476.269,142.3,511.5
@@ -22,7 +24,7 @@ const PinterestVariantOneIcon = ({ width, height, color, className }: IconProps)
       c15.67,113.978-48.442,237.412-163.23,228.529C258.085,368.704,245.023,353.283,220.646,338.475z" fill={iconColor}>
       </path>
       </g>
-    </svg>
+    </BaseIconSvg>
   );
 };
 

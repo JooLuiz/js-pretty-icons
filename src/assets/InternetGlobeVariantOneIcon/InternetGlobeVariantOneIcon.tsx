@@ -1,17 +1,19 @@
+import { BaseIconSvg } from "../../components/BaseIconSvg";
 import { IconProps } from "../../types/shared";
 
 //Icon Link: https://www.svgrepo.com/svg/478288/internet
-const InternetGlobeVariantOneIcon = ({ width, height, color, className }: IconProps) => {
+const InternetGlobeVariantOneIcon = ({ width, height, color, className, ariaLabel, title }: IconProps) => {
   const iconColor = color ? color : "#000000";
 
   return (
-    <svg
-      width={width ? width : 32}
-      height={height ? height : 32}
+    <BaseIconSvg
+      baseClassName="internet-globe-variant-1-icon"
       viewBox="0 0 512 512"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={`internet-globe-variant-1-icon ${className}`}
+      width={width}
+      height={height}
+      className={className}
+      ariaLabel={ariaLabel}
+      title={title}
     >
       <g>
       <path d="M255.994,0.006C114.607,0.013,0.012,114.612,0,256c0.012,141.387,114.607,255.986,255.994,255.994
@@ -37,7 +39,7 @@ const InternetGlobeVariantOneIcon = ({ width, height, color, className }: IconPr
       C424.548,403.692,419.604,409.176,414.393,414.386z M446.392,373.997h-69.998c9.008-31.929,14.414-67.842,15.367-105.998h87.912
       C477.626,306.804,465.704,342.912,446.392,373.997z" fill={iconColor} />
       </g>
-    </svg>
+    </BaseIconSvg>
   );
 };
 

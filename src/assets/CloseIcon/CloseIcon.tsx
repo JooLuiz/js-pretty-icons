@@ -1,17 +1,19 @@
+import { BaseIconSvg } from "../../components/BaseIconSvg";
 import { IconProps } from "../../types/shared";
 
 //Icon Link: https://www.svgrepo.com/svg/522506/close
-const CloseIcon = ({ width, height, color, className }: IconProps) => {
+const CloseIcon = ({ width, height, color, className, ariaLabel, title }: IconProps) => {
   const iconStroke = color ? color : "#000000";
 
   return (
-    <svg
-      width={width ? width : 32}
-      height={height ? height : 32}
+    <BaseIconSvg
+      baseClassName="close-icon"
       viewBox="-0.5 0 25 25"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={`close-icon ${className}`}
+      width={width}
+      height={height}
+      className={className}
+      ariaLabel={ariaLabel}
+      title={title}
     >
       <path
         d="M3 21.32L21 3.32001"
@@ -27,7 +29,7 @@ const CloseIcon = ({ width, height, color, className }: IconProps) => {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-    </svg>
+    </BaseIconSvg>
   );
 };
 

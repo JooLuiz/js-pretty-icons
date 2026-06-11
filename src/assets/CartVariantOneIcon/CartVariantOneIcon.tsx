@@ -1,15 +1,17 @@
+import { BaseIconSvg } from "../../components/BaseIconSvg";
 import { IconProps } from "../../types/shared";
 
 //Icon Link: https://www.svgrepo.com/svg/529455/cart-large-minimalistic
-const CartVariantOneIcon = ({ width, height, color, className }: IconProps) => {
+const CartVariantOneIcon = ({ width, height, color, className, ariaLabel, title }: IconProps) => {
   return (
-    <svg
-      width={width ? width : 32}
-      height={height ? height : 32}
+    <BaseIconSvg
+      baseClassName="cart-variant-1-icon"
       viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={`cart-variant-1-icon ${className}`}
+      width={width}
+      height={height}
+      className={className}
+      ariaLabel={ariaLabel}
+      title={title}
     >
       <path
         d="M7.5 18C8.32843 18 9 18.6716 9 19.5C9 20.3284 8.32843 21 7.5 21C6.67157 21 6 20.3284 6 19.5C6 18.6716 6.67157 18 7.5 18Z"
@@ -27,7 +29,7 @@ const CartVariantOneIcon = ({ width, height, color, className }: IconProps) => {
         strokeWidth="1.5"
         strokeLinecap="round"
       />
-    </svg>
+    </BaseIconSvg>
   );
 };
 

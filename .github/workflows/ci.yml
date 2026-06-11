@@ -25,8 +25,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Generate icon registry
+        run: npm run generate:registry
+
+      - name: Verify generated registry is committed
+        run: git diff --exit-code
+
       - name: Run lint checks
         run: npm run lint
 
-      - name: Run test suites
-        run: npm run test
+      - name: Run test suites with coverage
+        run: npm run test:coverage
+
+      - name: Build package
+        run: npm run build

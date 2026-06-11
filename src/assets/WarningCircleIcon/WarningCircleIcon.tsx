@@ -1,17 +1,19 @@
+import { BaseIconSvg } from "../../components/BaseIconSvg";
 import { IconProps } from "../../types/shared";
 
 //Icon Link: https://www.svgrepo.com/svg/473908/warning-circle
-const WarningCircleIcon = ({ width, height, color, className }: IconProps) => {
+const WarningCircleIcon = ({ width, height, color, className, ariaLabel, title }: IconProps) => {
   const iconColor = color ? color : "#000000";
 
   return (
-    <svg
-      width={width ? width : 32}
-      height={height ? height : 32}
+    <BaseIconSvg
+      baseClassName="warning-circle-icon"
       viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={`warning-circle-icon ${className}`}
+      width={width}
+      height={height}
+      className={className}
+      ariaLabel={ariaLabel}
+      title={title}
     >
       <g>
       <g>
@@ -20,7 +22,7 @@ const WarningCircleIcon = ({ width, height, color, className }: IconProps) => {
       <path fillRule="evenodd" clipRule="evenodd" d="M11 17C11 16.4477 11.4477 16 12 16H12.01C12.5623 16 13.01 16.4477 13.01 17C13.01 17.5523 12.5623 18 12.01 18H12C11.4477 18 11 17.5523 11 17Z" fill={iconColor} />
       </g>
       </g>
-    </svg>
+    </BaseIconSvg>
   );
 };
 
