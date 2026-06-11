@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased] - YYYY-MM-DD
 
+## [0.3.2] - 2026-06-10
+
+### Fixed
+
+- Publishing changes after build and adding a prePublishOnly script
+
 ## [0.3.1] - 2026-06-10
 
 ### Fixed
