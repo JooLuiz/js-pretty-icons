@@ -3,6 +3,8 @@ export type IconProps = {
   height?: number;
   color?: string;
   className?: string;
+  ariaLabel?: string;
+  title?: string;
 };
 
 export type Icons =

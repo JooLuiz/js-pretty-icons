@@ -1,22 +1,19 @@
+import { BaseIconSvg } from "../../components/BaseIconSvg";
 import { IconProps } from "../../types/shared";
 
 //Icon Link: https://www.svgrepo.com/svg/486647/double-chevron-down
-const DoubleChevronDownIcon = ({
-  width,
-  height,
-  color,
-  className,
-}: IconProps) => {
+const DoubleChevronDownIcon = ({ width, height, color, className, ariaLabel, title }: IconProps) => {
   const iconFill = color ? color : "#000000";
 
   return (
-    <svg
-      width={width ? width : 32}
-      height={height ? height : 32}
+    <BaseIconSvg
+      baseClassName="double-chevron-down-icon"
       viewBox="0 0 512 512"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={`double-chevron-down-icon ${className}`}
+      width={width}
+      height={height}
+      className={className}
+      ariaLabel={ariaLabel}
+      title={title}
     >
       <g stroke="none" strokeWidth={1} fill="none" fillRule="evenodd">
         <g fill={iconFill} transform="translate(134.186667, 123.520000)">
@@ -26,7 +23,7 @@ const DoubleChevronDownIcon = ({
           />
         </g>
       </g>
-    </svg>
+    </BaseIconSvg>
   );
 };
 

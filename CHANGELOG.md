@@ -5,7 +5,39 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased] - YYYY-MM-DD
+## [Unreleased]
+
+## [0.4.0] - 2026-06-11
+
+### Added
+
+- Optional `ariaLabel` and `title` props on all icons via shared `BaseIconSvg` wrapper; icons are decorative by default (`aria-hidden="true"`) unless labeled.
+- Code-generated icon registry via `npm run generate:registry`, producing `src/registry/iconRegistry.ts` and `src/registry/iconExports.ts`.
+- Named `PrettyIcons` export alongside the default export.
+- Expanded tests: `BaseIconSvg.test.tsx`, consolidated `Icons.test.tsx` and `PrettyIcons.test.tsx`.
+
+### Changed
+
+- Rollup build switched to preserveModules dual output: ESM in `dist/`, CJS in `dist/cjs/` to improve tree-shaking for direct named icon imports.
+- Package entry points updated: ESM is `dist/index.js` (was `dist/index.mjs`); CJS is `dist/cjs/index.js` (was `dist/index.js`).
+- Build output is now modular files under `dist/` and `dist/cjs/`, not single bundled files.
+- `PrettyIcons` reduced from hand-maintained inline icon map to registry lookup.
+- `src/index.ts` auto-generated from registry instead of manual exports.
+- All icon components refactored to use `BaseIconSvg` instead of inline `<svg>` markup.
+- Icons now emit `aria-hidden="true"` by default; apps or tests expecting unlabeled SVGs should pass `ariaLabel` or `title`.
+- CI pipeline runs registry generation, verifies generated files are committed, coverage tests, and build.
+- `prepublish:check` now runs `generate:registry` and `test:coverage`.
+- README props table translated to English with accessibility documentation.
+- Docs site theme toggle uses `MoonIcon` and `SunIcon` from the package.
+
+### Fixed
+
+- Icon `className` no longer renders literal `"undefined"` when omitted.
+
+### Removed
+
+- Terser minification from the library build.
+- Legacy per-icon tests in `src/__tests__/`.
 
 ## [0.3.2] - 2026-06-10
 

@@ -1,15 +1,17 @@
+import { BaseIconSvg } from "../../components/BaseIconSvg";
 import { IconProps } from "../../types/shared";
 
 //Icon Link: https://www.svgrepo.com/svg/529450/cart-large-2
-const CartVariantTwoIcon = ({ width, height, color, className }: IconProps) => {
+const CartVariantTwoIcon = ({ width, height, color, className, ariaLabel, title }: IconProps) => {
   return (
-    <svg
-      width={width ? width : 32}
-      height={height ? height : 32}
+    <BaseIconSvg
+      baseClassName="cart-variant-2-icon"
       viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={`cart-variant-2-icon ${className}`}
+      width={width}
+      height={height}
+      className={className}
+      ariaLabel={ariaLabel}
+      title={title}
     >
       <path
         d="M2 3L2.26491 3.0883C3.58495 3.52832 4.24497 3.74832 4.62248 4.2721C5 4.79587 5 5.49159 5 6.88304V9.5C5 12.3284 5 13.7426 5.87868 14.6213C6.75736 15.5 8.17157 15.5 11 15.5H13M19 15.5H17"
@@ -33,7 +35,7 @@ const CartVariantTwoIcon = ({ width, height, color, className }: IconProps) => {
         strokeWidth="1.5"
         stroke-Linecap="round"
       />
-    </svg>
+    </BaseIconSvg>
   );
 };
 

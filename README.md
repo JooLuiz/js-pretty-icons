@@ -57,14 +57,17 @@ return (
 
 ## Props
 
+| Prop        | Type   | Description                                                                                       | Required |
+| ----------- | ------ | ------------------------------------------------------------------------------------------------- | -------- |
+| `icon`      | string | Icon to display (PrettyIcons only).                                                               | Yes      |
+| `width`     | number | Icon width in pixels (default: 32px).                                                             | No       |
+| `height`    | number | Icon height in pixels (default: 32px).                                                            | No       |
+| `color`     | string | Icon color (default: "#000000").                                                                  | No       |
+| `className` | string | Additional className (always includes `{icon-name}-icon`, e.g. `chevron-down-icon`).            | No       |
+| `ariaLabel` | string | Accessible label for screen readers. When omitted, the icon is treated as decorative.             | No       |
+| `title`     | string | SVG title used as an accessible name. When omitted, the icon is treated as decorative.            | No       |
 
-| Prop        | Tipo   | Descrição                                                                          | Obrigatório |
-| ----------- | ------ | ---------------------------------------------------------------------------------- | ----------- |
-| `icon`      | string | Icon to be showed.                                                                 | Sim         |
-| `width`     | number | Icon width in pixels (default: 32px).                                              | Não         |
-| `height`    | number | Icon height in pixels (default: 32px).                                             | Não         |
-| `color`     | string | Icon color (default: "#000000").                                                   | Não         |
-| `className` | string | Icon className (always includes {icon-name}-icon classes, i.e. chevron-down-icon). | Não         |
+Icons are decorative by default (`aria-hidden="true"`). Provide `ariaLabel` or `title` when the icon conveys meaning on its own.
 
 
 ## Available Icons

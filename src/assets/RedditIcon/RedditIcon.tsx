@@ -1,17 +1,19 @@
+import { BaseIconSvg } from "../../components/BaseIconSvg";
 import { IconProps } from "../../types/shared";
 
 //Icon Link: https://www.svgrepo.com/svg/512751/reddit-143
-const RedditIcon = ({ width, height, color, className }: IconProps) => {
+const RedditIcon = ({ width, height, color, className, ariaLabel, title }: IconProps) => {
   const iconColor = color ? color : "#000000";
 
   return (
-    <svg
-      width={width ? width : 32}
-      height={height ? height : 32}
+    <BaseIconSvg
+      baseClassName="reddit-icon"
       viewBox="0 -1.5 20 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={`reddit-icon ${className}`}
+      width={width}
+      height={height}
+      className={className}
+      ariaLabel={ariaLabel}
+      title={title}
     >
       <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g transform="translate(-100.000000, -7561.000000)" fill={iconColor}>
@@ -21,7 +23,7 @@ const RedditIcon = ({ width, height, color, className }: IconProps) => {
       </g>
       </g>
       </g>
-    </svg>
+    </BaseIconSvg>
   );
 };
 

@@ -1,15 +1,17 @@
+import { BaseIconSvg } from "../../components/BaseIconSvg";
 import { IconProps } from "../../types/shared";
 
 //Icon Link: https://www.svgrepo.com/svg/522166/location
-const LocationIcon = ({ width, height, color, className }: IconProps) => {
+const LocationIcon = ({ width, height, color, className, ariaLabel, title }: IconProps) => {
   return (
-    <svg
-      width={width ? width : 32}
-      height={height ? height : 32}
+    <BaseIconSvg
+      baseClassName="location-icon"
       viewBox="-4 0 32 32"
-      version="1.1"
-      xmlns="http://www.w3.org/2000/svg"
-      className={`location-icon ${className}`}
+      width={width}
+      height={height}
+      className={className}
+      ariaLabel={ariaLabel}
+      title={title}
     >
       <title>location</title>
       <desc>Created with Sketch Beta.</desc>
@@ -32,7 +34,7 @@ const LocationIcon = ({ width, height, color, className }: IconProps) => {
           ></path>
         </g>
       </g>
-    </svg>
+    </BaseIconSvg>
   );
 };
 

@@ -115,9 +115,10 @@ a {
 }
 
 .theme-icon {
-  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   opacity: 0.55;
-  line-height: 1;
 }
 
 .theme-icon-active {

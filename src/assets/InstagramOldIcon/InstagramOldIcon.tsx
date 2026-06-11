@@ -1,21 +1,22 @@
+import { BaseIconSvg } from "../../components/BaseIconSvg";
 import { IconProps } from "../../types/shared";
 
 //Icon Link: https://www.svgrepo.com/svg/508844/instagram
-const InstagramOldIcon = ({ width, height, color, className }: IconProps) => {
+const InstagramOldIcon = ({ width, height, color, className, ariaLabel, title }: IconProps) => {
   return (
-    <svg
-      fill={color ? color : "#000000"}
-      version="1.1"
-      xmlns="http://www.w3.org/2000/svg"
-      width={width ? width : 32}
-      height={height ? height : 32}
+    <BaseIconSvg
+      baseClassName="instagram-old-icon"
       viewBox="0 0 512 512"
-      enableBackground="new 0 0 512 512"
-      className={`instagram-old-icon ${className}`}
+      width={width}
+      height={height}
+      className={className}
+      ariaLabel={ariaLabel}
+      title={title}
     >
       <g id="5151e0c8492e5103c096af88a50059a5">
         <path
           display="inline"
+          fill={color ? color : "#000000"}
           fillRule="evenodd"
           clipRule="evenodd"
           d="M66.084,0.5h379.819c36.079,0,65.597,29.505,65.597,65.584
@@ -28,7 +29,7 @@ const InstagramOldIcon = ({ width, height, color, className }: IconProps) => {
 		s45.948,99.443,102.625,99.443c56.688,0,102.636-44.525,102.636-99.443S313.163,155.447,256.475,155.447z"
         ></path>
       </g>
-    </svg>
+    </BaseIconSvg>
   );
 };
 

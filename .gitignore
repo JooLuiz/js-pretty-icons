@@ -1,4 +1,5 @@
 node_modules
 dist
 coverage
-scripts
+scripts/*
+!scripts/generate-icon-registry.mjs

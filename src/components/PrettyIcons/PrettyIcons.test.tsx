@@ -24,6 +24,26 @@ describe("PrettyIcons wrapper", () => {
 
     const alarmIcon = container.querySelector(".alarm-icon");
     expect(alarmIcon).toBeInTheDocument();
+    expect(alarmIcon).toHaveAttribute("aria-hidden", "true");
+    expect(alarmIcon).not.toHaveClass("undefined");
+  });
+
+  it("returns null for unknown icon values", () => {
+    const { container } = render(
+      <PrettyIcons icon={"unknown-icon" as Icons} />
+    );
+
+    expect(container.firstChild).toBeNull();
+  });
+
+  it("forwards accessibility props to the selected icon", () => {
+    const { container } = render(
+      <PrettyIcons icon="chevron-down" ariaLabel="Expand section" />
+    );
+
+    const svgElement = container.querySelector("svg");
+    expect(svgElement).toHaveAttribute("role", "img");
+    expect(svgElement).toHaveAttribute("aria-label", "Expand section");
   });
 
   it.each(iconNames)(
@@ -51,6 +71,7 @@ describe("PrettyIcons wrapper", () => {
       expect(svgElement).toHaveAttribute("width", "40");
       expect(svgElement).toHaveAttribute("height", "26");
       expect(svgElement).toHaveClass(customClassName);
+      expect(svgElement).not.toHaveClass("undefined");
       expect(customColorElement).toBeInTheDocument();
     }
   );

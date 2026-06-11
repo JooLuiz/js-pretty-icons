@@ -1,17 +1,19 @@
+import { BaseIconSvg } from "../../components/BaseIconSvg";
 import { IconProps } from "../../types/shared";
 
 //Icon Link: https://www.svgrepo.com/svg/511330/apple-173
-const AppleIcon = ({ width, height, color, className }: IconProps) => {
+const AppleIcon = ({ width, height, color, className, ariaLabel, title }: IconProps) => {
   const iconColor = color ? color : "#000000";
 
   return (
-    <svg
-      width={width ? width : 32}
-      height={height ? height : 32}
+    <BaseIconSvg
+      baseClassName="apple-icon"
       viewBox="-1.5 0 20 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={`apple-icon ${className}`}
+      width={width}
+      height={height}
+      className={className}
+      ariaLabel={ariaLabel}
+      title={title}
     >
       <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g transform="translate(-102.000000, -7439.000000)" fill={iconColor}>
@@ -21,7 +23,7 @@ const AppleIcon = ({ width, height, color, className }: IconProps) => {
       </g>
       </g>
       </g>
-    </svg>
+    </BaseIconSvg>
   );
 };
 

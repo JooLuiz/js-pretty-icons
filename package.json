@@ -1,20 +1,21 @@
 {
   "name": "js-pretty-icons",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "description": "JS Pretty Icons is a component library with a lot of beautiful and customizable icons, all of them from SVGRepo website.",
   "license": "MIT",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
+  "main": "dist/cjs/index.js",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/cjs/index.js"
     }
   },
   "sideEffects": false,
   "scripts": {
+    "generate:registry": "node scripts/generate-icon-registry.mjs",
     "build": "rollup -c --bundleConfigAsCjs",
     "rollup": "rollup -c --bundleConfigAsCjs",
     "build:watch": "rollup -c --bundleConfigAsCjs --watch",
@@ -22,7 +23,7 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "lint": "eslint src --ext .ts,.tsx --max-warnings=0",
-    "prepublish:check": "npm run lint && npm run test && npm run build",
+    "prepublish:check": "npm run generate:registry && npm run lint && npm run test:coverage && npm run build",
     "prepublishOnly": "npm run prepublish:check",
     "prepare": "husky"
   },
@@ -61,6 +62,7 @@
     "lint-staged": "^16.4.0",
     "react": "^19.0.0",
     "rollup-plugin-dts": "^6.1.1",
+    "rollup": "^4.34.6",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "ts-jest": "^29.4.6",
     "tslib": "^2.8.1",
@@ -78,8 +80,5 @@
   ],
   "lint-staged": {
     "src/**/*.{ts,tsx}": "eslint --max-warnings=0"
-  },
-  "dependencies": {
-    "rollup": "^4.34.6"
   }
 }
